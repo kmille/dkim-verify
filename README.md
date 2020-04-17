@@ -52,3 +52,19 @@ The response is self-explanatory: p is the base64 encoded public key. Now we hav
 
     
     
+```python
+    mail = email.message_from_bytes(open("email.eml", "rb").read())
+    dkim_header = mail.get("DKIM-Signature")
+
+    dkim_parameter = parse_dkim_header(dkim_header)
+
+    {'v': '1',
+ 'a': 'rsa-sha256',
+ 'c': 'relaxed/relaxed',
+ 'd': 'androidloves.me',
+ 's': '2019022801',
+ 't': '1584218937',
+ 'h': 'from:from:reply-to:subject:subject:date:date:message-id:message-id:to:to:cc:content-type:content-type:content-transfer-encoding:content-transfer-encoding',
+ 'bh': 'aeLbTnlUQQv2UFEWKHeiL5Q0NjOwj4ktNSInk8rN/P0=',
+ 'b': 'eJPHovlwH6mU2kj8rEYF2us6TJwQg0/T7NbJ6A1zHNbVJ5UJjyMOfn+tN3R/oSsBcSDsHTxGysZJIRPeXEEcAOPNqUV4PcybFf/5cQDVpKZtY7kj/SdapzeFKCPT+uTYGQp1VMUtWfc1SddyAZSw8lHcvkTqWhJKrCU0EoVAsik='}
+```
