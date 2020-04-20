@@ -325,7 +325,6 @@ I think the problem was that my DNS record had some trailing garbage which did n
 >kmille@linbox ~% vim dns.txt # somehow something like ABC came to my key :ok_woman:  
 >kmille@linbox ~% cat dns.txt  
 >"v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCcaywJn59dbp7TbRiDsVloBdCsgl9wAEvHo9WCDSNRqDJjkF1Fjy44Q4emckHP/Tv7hJdIlBtV8hEw5zGD+/kKkhnlx04BSYqXuxed1nOq6FDjNTIR6TmHetMfVU1IcO7ewyJZp5/2uM64JmTDh2u3ed4+JR7jqFE2e/ZqBTM1iQIDAQABABC"  
->cat dns.txt| rg -o "p=(.*)\"" -r '$1' | base64 -d   
 >kmille@linbox ~% cat dns.txt| rg -o "p=(.*)\\"" -r '$1' | base64 -d  
 >#Q2c]E.8CrA;H01pKǣՂ  
 >NIsP529zUMHp"Yθ&dÇky>%Q6{j35%  
