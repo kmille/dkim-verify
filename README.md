@@ -1,6 +1,6 @@
 # Verifying a DKIM-Signature by hand
 
-tldr: We take an email and verify the the DKIM-Signature step by step using python. We also take care about the signing itself (RSA). The RSA part takes more place than orignally planed. The whole source code can be founde in [verify-dkim.py](verify-dkim.py).  
+tldr: We take an email and verify the DKIM-Signature step by step using python. We also take care about the signing itself (RSA). The RSA part takes more place than orignally planed. The whole source code can be found in [verify-dkim.py](verify-dkim.py).  
 
 I recently had an issue with my DKIM signatures. I just got a 'Signature wrong' message and couldn't find out what the problem was. So I decided to take a look into.
 
