@@ -77,12 +77,12 @@ def hash_headers(mail: email.message.Message, header_to_hash: str, bh: str) -> S
     #
 
     header_to_hash_list = header_to_hash.split(":")
+    header_to_hash_list = list(dict.fromkeys(header_to_hash_list)) # Remove duplicate header i.e. from
     headers = ""
 
     for header in header_to_hash_list:
         if mail[header] and header in header_to_hash_list:
             headers += header.lower() + ":" + mail[header].strip() + "\r\n"
-            header_to_hash_list.remove(header) # strip duplicate header like the from
 
     dkim_header = mail.get("DKIM-Signature")
     dkim_header = re.sub(r'(\n|\r)', "", dkim_header)
