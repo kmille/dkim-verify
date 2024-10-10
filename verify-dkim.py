@@ -18,7 +18,7 @@ def hash_body(body: str) -> str:
     # https://tools.ietf.org/html/rfc6376#section-3.4.4
     # body canonicalization as specified in https://tools.ietf.org/html/rfc6376#section-3.4.4
     # this code is not RFC compliant. It misses for example:
-    # ** Reduce all sequences of WSP within a line to a single SP ** 
+    # ** Reduce all sequences of WSP within a line to a single SP **
     canonicalized_body = body.strip().encode() + b"\r\n"
     bh = b64encode(SHA256.new(canonicalized_body).digest())
     assert bh == b'aeLbTnlUQQv2UFEWKHeiL5Q0NjOwj4ktNSInk8rN/P0='
