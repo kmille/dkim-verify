@@ -14,7 +14,7 @@ If your mail server supports DKIM (Domain Keys Identified Mail), it signs the em
 4) The mail server forwards the message to Bob's mail server
 5) Bob's mail server verifies the DKIM-Signature. Therefore it needs the public key of Alice which is stored in a DNS record
 
-If you are using Thunderbird you can install `DKIM Verifier` to see if the DKIM signature is valid  
+If you are using Thunderbird you can install [DKIM Verifier](https://addons.thunderbird.net/en-US/thunderbird/addon/dkim-verifier/) to see if the DKIM signature is valid  
 ![Thunderbird](/screenshots/2020-04-16-084010_screenshot.png)  
 
 You can use [DMARC](https://en.wikipedia.org/wiki/DMARC) to specify what a mail server should do if a DKIM signature is wrong.
@@ -135,7 +135,7 @@ The body hash we calculated matches the body hash supplied in the DKIM-Signature
 
 ```python
 
-defk get_public_key(domain: str, selector: str) -> RSA.RsaKey:
+def get_public_key(domain: str, selector: str) -> RSA.RsaKey:
     dns_response = dns.resolver.query("{}._domainkey.{}.".format(selector, domain), "TXT").response.answer[0].to_text()
     p = re.search(r'p=([\w\d/+]*)', dns_response).group(1)
     pub_key = RSA.importKey(b64decode(p))
