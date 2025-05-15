@@ -381,7 +381,7 @@ Exponent: 65537 (0x10001)
 - [mail-tester](https://www.mail-tester.com/) is a great tool. Use it for debugging and regular tests
 - use [python-dkim](https://www.archlinux.org/packages/community/any/python-dkim/) for a RFC compliant DKIM verifier (checkout -d for more debug), helped me a lot
 - you can test emails online using https://www.appmaildev.com/en/dkimfile
-- [good read about DKIM](https://dkimcore.org/specification.htm) (basically the same like this post without code)
+- [good read about DKIM](https://dkimcore.org/specification.html) (basically the same like this post without code)
 
 # Meta (my first "blog post")
 - Github Markdown is okayish (the :date: emojicons suck and I couldn't fix it without adding `)
